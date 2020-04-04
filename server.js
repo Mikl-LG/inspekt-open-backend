@@ -53,8 +53,7 @@ app.get('/',(req,res)=>{
 
 app.post('/upload',upload.array('filedata'),function(req,res){
     console.log('reqfiles : ',req.files);
-},
-{'content-type':'multipart/form-data'})
+})
 
 app.all('*', (req, res) => {
     res.status(404).send('PAGE NOT FOUND')
