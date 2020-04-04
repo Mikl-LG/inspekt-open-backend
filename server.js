@@ -35,7 +35,7 @@ app.use((req,res,next)=>{
 app.use((req, res, next) => {
     /* /!\ RAT : allow-origin : restrict to remote and same-origin before production */
     res.header('Access-Control-Allow-Origin', "*"); 
-    /* /!\ */
+
 
     res.header('Access-Control-Allow-Headers', "Content-Type, X-Requested-With, Origin, Accept");
     next()
@@ -53,7 +53,8 @@ app.get('/',(req,res)=>{
 
 app.post('/upload',upload.array('filedata'),function(req,res){
     console.log('reqfiles : ',req.files);
-})
+},
+{'content-type':'multipart/form-data'})
 
 app.all('*', (req, res) => {
     res.status(404).send('PAGE NOT FOUND')
