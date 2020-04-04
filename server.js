@@ -34,6 +34,10 @@ app.use(bodyParser.urlencoded({
     extended:true
 }))
 
+app.get('/',(req,res)=>{
+    res.status(403).send('FORBIDDEN');
+})
+
 app.post('/upload',upload.array('filedata'),function(req,res){
     console.log('reqfiles : ',req.files);
 })
