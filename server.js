@@ -23,6 +23,13 @@ const upload = multer({
     })
 });
 
+module.exports.ignoreFavicon = (req,res,next)=>{
+    if(req.originalUrl === '/favicon.ico'){
+        res.status(204).json({nope:true});
+    }else{
+        next();
+    }
+}
 app.use((req,res,next)=>{
     res.header('Access-Control-Allow-Origin','*');
     res.header('Access-Control-Allow-Headers','Content-Type,X-Requested-With,Origin,Access')
