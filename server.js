@@ -38,6 +38,11 @@ app.post('/upload',upload.array('filedata'),function(req,res){
     console.log('reqfiles : ',req.files);
 })
 
+app.all('*', (req, res) => {
+    console.log('req.query', req.params)
+    res.status(404).send('PAGE NOT FOUND')
+})
+
 app.listen(3000,function(){
     console.log('OK')
 })
