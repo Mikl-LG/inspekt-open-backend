@@ -1,0 +1,25 @@
+{
+  "name": "inspekt_open",
+  "version": "1.0.0",
+  "description": "An open landing page for Inspekt users",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mikl-LG/inspekt.open.git"
+  },
+  "author": "Mikl Le Gallic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mikl-LG/inspekt.open/issues"
+  },
+  "homepage": "https://github.com/Mikl-LG/inspekt.open#readme",
+  "dependencies": {
+    "aws-sdk": "^2.652.0",
+    "express": "^4.17.1",
+    "multer": "^1.4.2",
+    "multer-s3": "^2.9.0"
+  }
+}
